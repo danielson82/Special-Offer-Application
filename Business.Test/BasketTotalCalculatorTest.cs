@@ -143,7 +143,7 @@ namespace Business.Test
 
 		private BasketTotalCalculator CreateBasketTotalCalculator()
 		{
-			return new BasketTotalCalculator(new ProductRepository());
+			return new BasketTotalCalculator(new ProductRepository(), new SpecialOfferManager());
 		}
 	}
 }

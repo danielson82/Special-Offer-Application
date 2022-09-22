@@ -8,12 +8,12 @@ namespace Business
 	{
 		public IProductRepository ProductRepository { get; set; }
 
-		public SpecialOfferManager SpecialOfferManager { get; set; }
+		public ISpecialOfferManager SpecialOfferManager { get; set; }
 
-		public BasketTotalCalculator(IProductRepository productRepository)
+		public BasketTotalCalculator(IProductRepository productRepository, ISpecialOfferManager specialOfferManager)
 		{
 			this.ProductRepository = productRepository;
-			this.SpecialOfferManager = new SpecialOfferManager();
+			this.SpecialOfferManager = specialOfferManager;
 		}
 
 		public decimal GetBasketTotal(Basket basket)
